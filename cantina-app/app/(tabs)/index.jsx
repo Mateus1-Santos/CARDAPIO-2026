@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-<<<<<<< HEAD
     backgroundColor: '#fff',  
   }, 
 
@@ -41,9 +40,6 @@ const styles = StyleSheet.create({
     width: '80%',             
     alignItems: 'center',
     border: red
-=======
-    
->>>>>>> 62b1fcd033523ff7553aacc874ce00d32675ac9d
   },
   botao: {
     padding : 10
