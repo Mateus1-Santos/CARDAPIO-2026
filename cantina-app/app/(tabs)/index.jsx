@@ -15,7 +15,7 @@ export default function HomeScreen() {
 
       <TouchableOpacity
         style={styles.botao}
-        onPress={() => alert("quicou")} 
+        onPress={() => alert("quico")} 
       >
         <Text>login</Text>
       </TouchableOpacity>
@@ -30,7 +30,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+<<<<<<< HEAD
+    backgroundColor: '#fff',  
+  }, 
+
+  botao: { 
+    padding: 15,              
+    backgroundColor: '#DDDDDD', 
+    borderRadius: 8,          
+    width: '80%',             
+    alignItems: 'center',
+    border: red
+=======
     
+>>>>>>> 62b1fcd033523ff7553aacc874ce00d32675ac9d
   },
   botao: {
     padding : 10
