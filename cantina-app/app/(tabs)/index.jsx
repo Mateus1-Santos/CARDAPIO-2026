@@ -17,7 +17,7 @@ export default function HomeScreen() {
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <Text style={styles.titulo}>
-            Bem vindo a lanchonete de Daniel Marcos, o que deseja fazer?
+            Bem vindo a lanchonete, o que deseja fazer?
           </Text>
         </View>
 
