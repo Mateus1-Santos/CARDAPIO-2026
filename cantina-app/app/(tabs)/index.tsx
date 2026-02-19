@@ -1,18 +1,17 @@
-import {Text, View, TouchableOpacity, StyleSheet, Image, ScrollView} from 'react-native';
+import {Text, View, TouchableOpacity, StyleSheet, Image, ScrollView,} from 'react-native';
+
  
-export default function HomeScreen() {
+export default function HomeScreen() { 
   return (
     <View style={styles.container}>
       <Text style={styles.textBemVindo}>Bem Vindo!</Text>
       <Text>Fazer login</Text>
 
 
-    </View>
-    
     
   );
 }
-
+ 
 const styles = StyleSheet.create({
   container:{
     flex: 1,
@@ -22,5 +21,10 @@ const styles = StyleSheet.create({
   textBemVindo:{
     fontWeigth: 'bold',
     fontSize: 60,
+  }
+
+  botao:{
+    padding : 10
+    
   }
 });
