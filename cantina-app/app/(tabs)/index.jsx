@@ -1,18 +1,26 @@
-import {Text, View, TouchableOpacity, StyleSheet, Image, ScrollView,} from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native';
 
- 
 export default function HomeScreen() { 
   return (
-    <View>
-    <TouchableOpacity
-    style={styles.botao}
-    onPress={() => alert=("clicou")}
-    >
+    <View style={styles.container}>
+      
+      <TouchableOpacity
+        style={styles.botao}
+        onPress={() => alert("quicou")} 
+      >
+        <Text>cadastro</Text>
+      </TouchableOpacity>
 
-    <Text>login</Text>
-    </TouchableOpacity>
+      <View style={{ height: 20 }} />
+
+      <TouchableOpacity
+        style={styles.botao}
+        onPress={() => alert("quicou")} 
+      >
+        <Text>login</Text>
+      </TouchableOpacity>
+
     </View>
-  
   );
 }
  
