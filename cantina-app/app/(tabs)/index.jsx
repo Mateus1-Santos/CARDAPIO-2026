@@ -1,41 +1,57 @@
-import { Text, View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import React from 'react';
+import { 
+  Text, 
+  View, 
+  TouchableOpacity, 
+  StyleSheet, 
+  ImageBackground 
+} from 'react-native';
 
-export default function HomeScreen() { 
+export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      
-      <View style={styles.textContainer}>
-        <Text style={styles.titulo}>Bem vindo a lanchonete de Daniel Marcos, o que deseja fazer?</Text>
+    <ImageBackground
+      source={require('./lanche.png')}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.container}>
+        <View style={styles.textContainer}>
+          <Text style={styles.titulo}>
+            Bem vindo a lanchonete de Daniel Marcos, o que deseja fazer?
+          </Text>
+        </View>
+
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => alert("Indo para Cadastro")}
+        >
+          <Text>Cadastro</Text>
+        </TouchableOpacity>
+
+        <View style={{ height: 20 }} />
+
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => alert("Indo para Login")}
+        >
+          <Text>Login</Text>
+        </TouchableOpacity>
       </View>
-      
-      <TouchableOpacity
-        style={styles.botao}
-        onPress={() => alert("Indo para Cadastro")} 
-      >
-        <Text>Cadastro</Text>
-      </TouchableOpacity>
-
-      <View style={{ height: 20 }} />
-
-      <TouchableOpacity
-        style={styles.botao}
-        onPress={() => alert("Indo para Login")} 
-      >
-        <Text>Login</Text>
-      </TouchableOpacity>
-
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
+
   container: {
     flex: 1,
-    justifyContent: "center", 
-    alignItems: "center",     
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
-    backgroundColor: '#fff',  
-  }, 
+  },
 
   textContainer: {
     marginBottom: 30,
@@ -43,21 +59,19 @@ const styles = StyleSheet.create({
   },
 
   titulo: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     fontSize: 18,
     textAlign: 'center',
     fontWeight: 'bold',
+    color: '#fff',
   },
 
-  botao: { 
-    padding: 15,              
-    backgroundColor: '#DDDDDD', 
-    borderRadius: 8,          
-    width: '80%',             
+  botao: {
+    padding: 15,
+    backgroundColor: '#ffffffaa', 
+    borderRadius: 8,
+    width: '80%',
     alignItems: 'center',
-    borderColor: '#FF0000', 
+    borderColor: '#FF0000',
     borderWidth: 1,
   },
 });
