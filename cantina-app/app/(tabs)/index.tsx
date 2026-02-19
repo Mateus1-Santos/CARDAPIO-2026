@@ -2,8 +2,8 @@ import {Text, View, TouchableOpacity, StyleSheet, Image, ScrollView} from 'react
  
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>Bem Vindo!</Text>
+    <View style={styles.container}>
+      <Text style={styles.textBemVindo}>Bem Vindo!</Text>
       <Text>Fazer login</Text>
 
 
@@ -18,7 +18,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
-    
+  },
+  textBemVindo:{
+    fontWeigth: 'bold',
+    fontSize: 60,
   }
 });
