@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-<<<<<<< HEAD
     backgroundColor: '#fff',  
   }, 
 
@@ -40,10 +39,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,          
     width: '80%',             
     alignItems: 'center',
-    border: red
-=======
-    
->>>>>>> 62b1fcd033523ff7553aacc874ce00d32675ac9d
+    borderColor: '#FF0000a',
+    borderWidth: 1,
+    borderStyle: 'solid'
   },
   botao: {
     padding : 10

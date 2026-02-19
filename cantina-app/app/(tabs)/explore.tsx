@@ -13,6 +13,9 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   containerImage:{
-    
+    width: 250,
+    height: 150,
+    borderRadius: 20,
+    marginTop: 100,
   }
 })
