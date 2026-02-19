@@ -23,12 +23,12 @@ export default function HomeScreen() {
     </View>
   );
 }
- 
+
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "center", 
+    alignItems: "center",     
     padding: 20,
     backgroundColor: '#fff',  
   }, 
@@ -39,11 +39,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,          
     width: '80%',             
     alignItems: 'center',
-    border: red
+    borderColor: "ff0000"
   },
-  botao: {
-    padding : 10
-    
-  }
 });
-0
