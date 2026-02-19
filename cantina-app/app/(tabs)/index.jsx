@@ -3,12 +3,16 @@ import {Text, View, TouchableOpacity, StyleSheet, Image, ScrollView,} from 'reac
  
 export default function HomeScreen() { 
   return (
-    <View style={styles.container}>
-      <Text style={styles.textBemVindo}>Bem Vindo!</Text>
-      <Text>Fazer login</Text>
+    <View>
+    <TouchableOpacity
+    style={styles.botao}
+    onPress={() => alert=("clicou")}
+    >
 
-
-    
+    <Text>login</Text>
+    </TouchableOpacity>
+    </View>
+  
   );
 }
  
@@ -17,14 +21,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  textBemVindo:{
-    fontWeigth: 'bold',
-    fontSize: 60,
+    padding: 20,
+    
   }
 
-  botao:{
+  botao: {
     padding : 10
     
   }
 });
+0
