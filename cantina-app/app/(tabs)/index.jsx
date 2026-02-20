@@ -5,7 +5,7 @@ import { Text, View, TouchableOpacity, StyleSheet, ImageBackground } from 'react
 export default function HomeScreen() {
   return (
     <ImageBackground
-      source={require('./lanche.png')}
+      source={require('../../assets/images/lanche.png')}
       style={styles.background}
       resizeMode="cover"
     >
