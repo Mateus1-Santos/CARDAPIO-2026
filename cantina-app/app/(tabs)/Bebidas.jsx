@@ -1,6 +1,6 @@
 import {View, Text, FlatList, StyleSheet} from 'react-native'
 
-export default function BebidasScreen (){
+export default function Bebidas (){
 
     const bebidas = [
         {id: '1', nome: 'Coca-Cola Lata', preco: '6.50'},
