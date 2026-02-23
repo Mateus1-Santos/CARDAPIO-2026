@@ -1,6 +1,10 @@
 import { View, TouchableOpacity, Image, ScrollView, StyleSheet } from 'react-native';
 
 export default function TabTwoScreen() {
+
+  
+
+
   return (
     <View>
       
