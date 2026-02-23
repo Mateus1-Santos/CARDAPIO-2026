@@ -1,5 +1,4 @@
 import {View, Text, FlatList, StyleSheet} from 'react-native'
-import { unstable_styles } from '*.module.sass';
 
 export default function BebidasScreen (){
 
@@ -14,7 +13,7 @@ export default function BebidasScreen (){
     ]
 
     return (
-        <View>
+        <View style={{ flex: 1, backgroundColor: 'transparent' }}>
             <FlatList
                 data={bebidas}
                 keyExtractor={(item) => item.id}
