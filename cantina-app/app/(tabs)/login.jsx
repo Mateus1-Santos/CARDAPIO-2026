@@ -1,32 +1,70 @@
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { Text, View, StyleSheet, TextInput, SafeAreaView } from 'react-native';
 
-export default function HomeScreen() {
+
+function HomeScreen() {
   return (
-      <view>
-      styles={Styles.text}
-        <text>prencha os campos obrigatorios</text>
-    </view>
-      );
-    }
- export default function login(){
-const [form, setForm] = useState({email:'', senha:''});
+    <View style={styles.container}>
+      <Text style={styles.text}>Preencha os campos obrigatórios</Text>
+    </View>
+  );
+}
 
-const handleInput = (e) => {
-    const { name, value } = e.target;
+export default function Login() {
+  const [form, setForm] = useState({ email: '', senha: '' });
+
+
+  const handleInput = (name, value) => {
     setForm({
       ...form,
       [name]: value
     });
   };
-    return(
-    
-    );
- }
 
+  return (
+    <SafeAreaView style={styles.background}>
+      <HomeScreen />
+      
+      <TextInput 
+        style={styles.input}
+        placeholder="Email"
+        value={form.email}
+        onChangeText={(val) => handleInput('email', val)}
+      />
+      
+      <TextInput 
+        style={styles.input}
+        placeholder="Senha"
+        secureTextEntry={true} // 
+        value={form.senha}
+        onChangeText={(val) => handleInput('senha', val)}
+      />
+    </SafeAreaView>
+  );
+}
 
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    padding: 20,
+    justifyContent: 'center',
+    backgroundColor: '#f5f5f5'
   },
+  container: {
+    marginBottom: 20,
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  input: {
+    height: 50,
+    backgroundColor: '#fff',
+    marginBottom: 15,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#ddd'
+  }
 });
