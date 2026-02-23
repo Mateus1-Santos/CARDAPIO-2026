@@ -1,5 +1,6 @@
 import { View, FlatList, Text, StyleSheet } from 'react-native';
 
+export default function Lanches (){
     const lanches = [
         {id: '1', nome: 'X-tudo', preco: 'R$12.00'},
         {id: '2', nome: 'Dogao da casa', preco: 'R$14.00'},
