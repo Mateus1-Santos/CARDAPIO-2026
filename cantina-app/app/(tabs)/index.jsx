@@ -1,10 +1,5 @@
 import React from 'react';
-<<<<<<< Updated upstream
 import { Text, View, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
-
-=======
-import {Text,View,TouchableOpacity,StyleSheet,ImageBackground} from 'react-native';
->>>>>>> Stashed changes
 
 export default function HomeScreen() {
   return (
