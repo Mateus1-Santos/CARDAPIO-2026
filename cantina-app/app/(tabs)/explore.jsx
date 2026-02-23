@@ -2,6 +2,10 @@ import { View, TouchableOpacity, Image, ScrollView, StyleSheet } from 'react-nat
 
 
 export default function TabTwoScreen() {
+
+  
+
+
   return (
     <View>
       <Image source={require('../../assets/images/Salgado-Joelho-Receita-Facil-e-Saborosa-Para-Vender-ou-Saborear-em-Casa.webp')}
@@ -16,7 +20,5 @@ const styles = StyleSheet.create({
     width: 450,
     height: 300,
     marginTop: 25,
-
-
   }
 })
