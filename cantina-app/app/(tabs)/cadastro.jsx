@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert
-} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ImageBackground} from 'react-native';
 
 export default function Cadastro() {
   const [nome, setNome] = useState('');
@@ -18,7 +17,15 @@ export default function Cadastro() {
   }
 
   return (
+
+    <ImageBackground
+    source={require('../../assets/images/espaco.png')}
+    style={{ flex: 1 }}
+    resizeMode="cover"
+  >
+
     <View style={styles.container}>
+
       <Text style={styles.titulo}>Criar Conta</Text>
 
       <TextInput
@@ -48,6 +55,7 @@ export default function Cadastro() {
         <Text style={styles.textoBotao}>Cadastrar</Text>
       </TouchableOpacity>
     </View>
+    </ImageBackground>
   );
 }
 
@@ -65,7 +73,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#fff',
     borderRadius: 8,
     padding: 12,
     marginBottom: 12,

@@ -1,6 +1,5 @@
 import {View, Text, FlatList, StyleSheet} from 'react-native'
 
-
 export default function BebidasScreen (){
 
     const bebidas = [
@@ -14,7 +13,7 @@ export default function BebidasScreen (){
     ]
 
     return (
-        <View>
+        <View style={{ flex: 1, backgroundColor: 'transparent' }}>
             <FlatList
                 data={bebidas}
                 keyExtractor={(item) => item.id}
