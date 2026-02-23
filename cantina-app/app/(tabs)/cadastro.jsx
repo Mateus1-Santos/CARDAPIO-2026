@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ImageBackground} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert} from 'react-native';
 
 export default function Cadastro() {
   const [nome, setNome] = useState('');
@@ -18,12 +18,6 @@ export default function Cadastro() {
 
   return (
 
-    <ImageBackground
-    source={require('../../assets/images/espaco.png')}
-    style={{ flex: 1 }}
-    resizeMode="cover"
-  >
-
     <View style={styles.container}>
 
       <Text style={styles.titulo}>Criar Conta</Text>
@@ -31,7 +25,7 @@ export default function Cadastro() {
       <TextInput
         style={styles.input}
         placeholder="Nome"
-        placeholderTextColor="#fff"
+        placeholderTextColor="#000"
         value={nome}
         onChangeText={setNome}
       />
@@ -39,7 +33,7 @@ export default function Cadastro() {
       <TextInput
         style={styles.input}
         placeholder="Email"
-        placeholderTextColor="#fff"
+        placeholderTextColor="#000"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -48,7 +42,7 @@ export default function Cadastro() {
       <TextInput
         style={styles.input}
         placeholder="Senha"
-        placeholderTextColor="#fff"
+        placeholderTextColor="#000"
         value={senha}
         onChangeText={setSenha}
         secureTextEntry
@@ -58,7 +52,6 @@ export default function Cadastro() {
         <Text style={styles.textoBotao}>Cadastrar</Text>
       </TouchableOpacity>
     </View>
-    </ImageBackground>
   );
 }
 
@@ -69,6 +62,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   titulo: {
+    color: 'black',
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
@@ -76,20 +70,19 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#fff',
+    borderColor: '#000',
     borderRadius: 8,
     padding: 12,
     marginBottom: 12,
-    color: 'white',
   },
   botao: {
-    backgroundColor: '#c9ffd1',
+    backgroundColor: '#1dad31',
     padding: 15,
     borderRadius: 8,
     alignItems: 'center',
   },
   textoBotao: {
-    color: '#2b2b2b',
+    color: '#000',
     fontWeight: 'bold',
   },
 });
