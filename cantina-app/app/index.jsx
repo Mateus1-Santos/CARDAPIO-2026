@@ -1,7 +1,10 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
     <ImageBackground
       source={require('../../assets/images/lanche.png')}
@@ -17,7 +20,7 @@ export default function HomeScreen() {
 
         <TouchableOpacity
           style={styles.botao}
-          onPress={() =>}
+          onPress={() => router.push('/cadastro')}
         >
           <Text>Cadastro</Text>
         </TouchableOpacity>
@@ -26,7 +29,7 @@ export default function HomeScreen() {
 
         <TouchableOpacity
           style={styles.botao}
-          onPress={() =>}
+          onPress={() => router.push('/login')}
         >
           <Text>Login</Text>
         </TouchableOpacity>
@@ -34,6 +37,7 @@ export default function HomeScreen() {
     </ImageBackground>
   );
 }
+
 
 const styles = StyleSheet.create({
   background: {
