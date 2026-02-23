@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 
-
 export default function HomeScreen() {
   return (
     <ImageBackground
@@ -18,7 +17,7 @@ export default function HomeScreen() {
 
         <TouchableOpacity
           style={styles.botao}
-          onPress={() => alert("Indo para Cadastro")}
+          onPress={() => alert("Indo para Cadastro...")}
         >
           <Text>Cadastro</Text>
         </TouchableOpacity>
@@ -27,7 +26,7 @@ export default function HomeScreen() {
 
         <TouchableOpacity
           style={styles.botao}
-          onPress={() => alert("Indo para Login")}
+          onPress={() => alert("Indo para Login...")}
         >
           <Text>Login</Text>
         </TouchableOpacity>
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
 
   botao: {
     padding: 15,
-    backgroundColor: '#ffffffaa', 
+    backgroundColor: '#ffffffaa',
     borderRadius: 8,
     width: '80%',
     alignItems: 'center',
