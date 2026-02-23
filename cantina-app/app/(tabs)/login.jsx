@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TextInput, SafeAreaView } from 'react-native';
+import { Text, View, StyleSheet, TextInput, SafeAreaView, TouchableOpacity } from 'react-native';
 
 
 function HomeScreen() {
@@ -39,6 +39,10 @@ export default function Login() {
         value={form.senha}
         onChangeText={(val) => handleInput('senha', val)}
       />
+       <Button
+       style={styles.botao}
+       placeholder="entrar"
+       />
     </SafeAreaView>
   );
 }
