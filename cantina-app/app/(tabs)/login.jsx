@@ -19,7 +19,6 @@ export default function Login() {
     });
   };
 
-  // Função que será executada ao clicar no botão
   const realizarLogin = () => {
     if (form.email === '' || form.senha === '') {
       Alert.alert("Erro", "Por favor, preencha todos os campos!");
