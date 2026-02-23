@@ -7,7 +7,6 @@ import LanchesScreen from '../../screens/LanchesScreens';
 import SalgadoScreen from '../../screens/SalgadoScreens'
 
 
-
 export default function TabTwoScreen() {
   return (
     <NavigationContainer>
