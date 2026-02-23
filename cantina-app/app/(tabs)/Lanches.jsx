@@ -1,4 +1,4 @@
-import { View, FlatList, Text } from 'react-native/types';
+import { View, FlatList, Text, StyleSheet } from 'react-native';
 
 export default function LanchesScreens (){
     const lanches = [
@@ -15,10 +15,14 @@ export default function LanchesScreens (){
                 data ={lanches}
                 keyExtractor={(item) => (item.id)}
                 renderItem={({item}) => (
-                    <Text styles={StyleSheet.texto}>{item.lanches} {item['preço']}</Text>
+                    <Text style={styles.texto}>{item.lanches} {item['preço']}</Text>
                 )} 
             >
             </FlatList>
         </View>
     );
 }
+
+const styles = StyleSheet. create({
+
+})

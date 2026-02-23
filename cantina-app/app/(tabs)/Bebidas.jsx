@@ -1,5 +1,5 @@
 import {View, Text, FlatList, StyleSheet} from 'react-native'
-import { unstable_styles } from '*.module.sass';
+
 
 export default function BebidasScreen (){
 
@@ -26,3 +26,9 @@ export default function BebidasScreen (){
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    texto:{
+
+    },
+})
