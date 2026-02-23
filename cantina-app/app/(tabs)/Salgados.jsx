@@ -1,6 +1,6 @@
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 
-export default function Salgados (){
+export default function Salgados() {
 
     const salgados = [
         {id: '1', nome: 'Coxinha', preco: '5.00'},
@@ -26,6 +26,6 @@ export default function Salgados (){
 
 const styles = StyleSheet.create({
     container:{
-        
+
     }
 })
