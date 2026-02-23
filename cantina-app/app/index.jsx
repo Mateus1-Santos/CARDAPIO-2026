@@ -17,7 +17,7 @@ export default function HomeScreen() {
 
         <TouchableOpacity
           style={styles.botao}
-          onPress={() => alert("Indo para Cadastro...")}
+          onPress={() =>}
         >
           <Text>Cadastro</Text>
         </TouchableOpacity>
@@ -26,7 +26,7 @@ export default function HomeScreen() {
 
         <TouchableOpacity
           style={styles.botao}
-          onPress={() => alert("Indo para Login...")}
+          onPress={() =>}
         >
           <Text>Login</Text>
         </TouchableOpacity>
