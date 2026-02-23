@@ -8,6 +8,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts", "screens/BebidasScreens.jsx", "screens/LanchesScreens.jsx", "screens/SalgadoScreens.jsx"
   ]
 }
