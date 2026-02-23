@@ -74,5 +74,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#ffffffaa',
     borderWidth: 1,
-  },
+  }
 });
