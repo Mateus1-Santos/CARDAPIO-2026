@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: '80%',
     alignItems: 'center',
-    borderColor: '#FF0000',
+    borderColor: '#ffffffaa',
     borderWidth: 1,
   },
 });
