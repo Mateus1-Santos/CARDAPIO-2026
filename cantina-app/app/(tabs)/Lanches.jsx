@@ -10,12 +10,12 @@ export default function Lanches (){
     ]
 
     return (
-        <View style={{ flex: 1, padding: 20 }}>
+        <View>
             <FlatList
                 data ={lanches}
                 keyExtractor={(item) => (item.id)}
                 renderItem={({item}) => (
-                    <Text style={styles.texto}>{item.lanches} {item['preço']}</Text>
+                    <Text style={styles.texto}>{item.nome} {item.preco}</Text>
                 )} 
             >
             </FlatList>
