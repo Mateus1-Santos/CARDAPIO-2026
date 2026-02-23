@@ -6,6 +6,7 @@ import BebidasScreen from '../../screens/BebidasScreens';
 import LanchesScreen from '../../screens/LanchesScreens';
 import SalgadoScreen from '../../screens/SalgadoScreens'
 
+const Tab = createBottomTabNavigator();
 
 export default function TabTwoScreen() {
   return (
