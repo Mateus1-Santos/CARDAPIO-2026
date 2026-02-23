@@ -31,6 +31,7 @@ export default function Cadastro() {
       <TextInput
         style={styles.input}
         placeholder="Nome"
+        placeholderTextColor="#fff"
         value={nome}
         onChangeText={setNome}
       />
@@ -38,6 +39,7 @@ export default function Cadastro() {
       <TextInput
         style={styles.input}
         placeholder="Email"
+        placeholderTextColor="#fff"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -46,6 +48,7 @@ export default function Cadastro() {
       <TextInput
         style={styles.input}
         placeholder="Senha"
+        placeholderTextColor="#fff"
         value={senha}
         onChangeText={setSenha}
         secureTextEntry
@@ -77,15 +80,16 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     marginBottom: 12,
+    color: 'white',
   },
   botao: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#c9ffd1',
     padding: 15,
     borderRadius: 8,
     alignItems: 'center',
   },
   textoBotao: {
-    color: '#fff',
+    color: '#2b2b2b',
     fontWeight: 'bold',
   },
 });
