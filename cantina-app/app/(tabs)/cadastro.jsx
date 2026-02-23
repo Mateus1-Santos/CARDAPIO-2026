@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert
-} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ImageBackground} from 'react-native';
 
 export default function Cadastro() {
   const [nome, setNome] = useState('');
@@ -18,7 +17,14 @@ export default function Cadastro() {
   }
 
   return (
+
     <View style={styles.container}>
+        <ImageBackground
+        source={require('../../assets/images/espaco.png')}
+        style={styles.background}
+        resizeMode="cover"
+        ></ImageBackground>
+
       <Text style={styles.titulo}>Criar Conta</Text>
 
       <TextInput
