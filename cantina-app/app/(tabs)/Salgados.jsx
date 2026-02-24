@@ -3,7 +3,7 @@ import {View, Text, FlatList, StyleSheet} from 'react-native';
 export default function Salgados() {
 
     const salgados = [
-        {id: '1', nome: 'Coxinha', preco: '5.00'},
+        {id: '1', nome: 'Coxinha', preco: '5.00',image: require ('../../assets/images/coxinha.png')},
         {id: '2', nome: 'Salsicha', preco: '5.00'},
         {id: '3', nome: 'Ovo Empanado', preco: '4.50'},
         {id: '4', nome: 'Kalzone', preco: '7.00'},
