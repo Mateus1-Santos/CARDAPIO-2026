@@ -14,7 +14,7 @@ export default function HomeScreen() {
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <Text style={styles.titulo}>
-            Bem vindo a lanchonete, o que deseja fazer?
+            bem-vindo ao zerafila,por favor escolha uma das opçoes a baixo para prosseguir
           </Text>
         </View>
 
