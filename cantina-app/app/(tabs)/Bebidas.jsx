@@ -1,4 +1,5 @@
-import {View, Text, FlatList, StyleSheet, Image} from 'react-native'
+import {View, Text, FlatList, StyleSheet, Image, TouchableOpacity} from 'react-native'
+import {useState} from 'react'
 
 export default function Bebidas (){
 
@@ -11,6 +12,15 @@ export default function Bebidas (){
         {id: '6', nome: 'Guaraná Lata', preco:'7.00', image: require('../../assets/images/guarana (1).png')},
         {id: '7', nome: 'Monster', preco: '10.00', image: require('../../assets/images/energetico-monster-energy-lata-473ml-1.png')}
     ]
+
+    const [carrinho, setCarrinho] = useState([]);
+    const adicionarAoCarrinho = (item) => {
+      setCarrinho([...carrinho, item]);
+    };
+
+
+
+
 
     return (
           <FlatList
@@ -26,8 +36,20 @@ export default function Bebidas (){
                     />
                     <View style={styles.item}>
                         <Text style={styles.nome}>{item.nome}</Text>
-                        <Text style={styles.preco}>R$ {item.preco}</Text>
+                        <Text style={styles.preco}> - R$ {item.preco}</Text>
                     </View>
+
+                <TouchableOpacity
+                    style={styles.botao}
+                    onPress={() => adicionarAoCarrinho(item)}
+                  >
+                    <Text style={styles.botaoTexto}>Adicionar</Text>
+                </TouchableOpacity>
+
+
+
+
+
                 </View>
             )}
           />
@@ -76,6 +98,20 @@ export default function Bebidas (){
         card:{
             flexDirection: 'row',
             alignItems: 'center',
-            margin: 10
-        }
+            justifyContent: 'space-between',
+            padding: 10,
+            marginBottom: 10,
+            backgroundColor: '#eee',
+            borderRadius: 8
+        },
+        botao: {
+            backgroundColor: '#2ecc71',
+            padding: 8,
+            borderRadius: 5,
+            marginLeft: 40,
+          },
+          botaoTexto: {
+            color: '#fff',
+            fontWeight: 'bold'
+          }
       });
