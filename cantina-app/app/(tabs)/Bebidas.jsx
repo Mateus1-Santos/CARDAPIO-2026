@@ -36,8 +36,9 @@ export default function Bebidas (){
 
     const styles = StyleSheet.create({
         container: {
+          borderColor: '#fff',
           flex: 1,
-          backgroundColor: '#ffff',
+          backgroundColor: '#cd7d1b',
           paddingTop: 60,
           paddingHorizontal: 25,
         },

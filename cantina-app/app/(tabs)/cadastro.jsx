@@ -57,26 +57,29 @@ export default function Cadastro() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#9e5312',
     flex: 1,
     justifyContent: 'center',
     padding: 20,
   },
   titulo: {
-    color: 'black',
+    color: '#f8a835',
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
     textAlign: 'center'
   },
   input: {
+    color: '#d31206',
     borderWidth: 1,
-    borderColor: '#000',
+    borderColor: '#f8a835',
     borderRadius: 8,
     padding: 12,
     marginBottom: 12,
   },
   botao: {
-    backgroundColor: '#1dad31',
+    backgroundColor: '#d31206',
+    color: 'white',
     padding: 15,
     borderRadius: 8,
     alignItems: 'center',
