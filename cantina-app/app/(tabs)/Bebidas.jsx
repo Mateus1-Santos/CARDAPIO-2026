@@ -1,32 +1,36 @@
-import {View, Text, FlatList, StyleSheet} from 'react-native'
+import {View, Text, FlatList, StyleSheet, Image} from 'react-native'
 
 export default function Bebidas (){
 
     const bebidas = [
-        {id: '1', nome: 'Coca-Cola Lata', preco: '6.50'},
-        {id: '2', nome: 'Água', preco: '1.99'},
-        {id: '3', nome: 'Suco de Laranja', preco: '5.00'},
-        {id: '4', nome: 'Pepsi', preco: '5.50'},
-        {id: '5', nome: 'Laranjinha', preco: '4.50'},
-        {id: '6', nome: 'Guaraná', preco:'7.00'},
-        {id: '7', nome: 'Monster', preco: '10.00'}
+        {id: '1', nome: 'Coca-Cola Lata', preco: '6.50', image: require('../../assets/images/coca.png')},
+        {id: '2', nome: 'Água', preco: '1.99', image: require('../../assets/images/agua.png')},
+        {id: '3', nome: 'Suco de Laranja', preco: '5.00', image:require('../../assets/images/Suco-Laranja-Integral-Suq-Garrafa-270ml.png')},
+        {id: '4', nome: 'Pepsi Lata', preco: '5.50', image: require ('../../assets/images/pepsi.png')},
+        {id: '5', nome: 'Laranjinha', preco: '4.50', image: require('../../assets/images/laranjinha-200-ml-12-unidades-65117f8535919-836 (1).png')},
+        {id: '6', nome: 'Guaraná Lata', preco:'7.00', image: require('../../assets/images/guarana (1).png')},
+        {id: '7', nome: 'Monster', preco: '10.00', image: require('../../assets/images/energetico-monster-energy-lata-473ml-1.png')}
     ]
 
     return (
-        <View style={styles.container}>
-          <Text style={styles.titulo}>Bebidas</Text>
           <FlatList
             data={bebidas}
             keyExtractor={(item) => item.id}
             contentContainerStyle={styles.lista}
             renderItem={({ item }) => (
-              <View style={styles.item}>
-                <Text style={styles.nome}>{item.nome}</Text>
-                <Text style={styles.preco}>R$ {item.preco}</Text>
-              </View>
+                <View style={styles.card}>
+                    <Image
+                        source={item.image} 
+                        style={styles.image} 
+                        resizeMode= 'contain'
+                    />
+                    <View style={styles.item}>
+                        <Text style={styles.nome}>{item.nome}</Text>
+                        <Text style={styles.preco}>R$ {item.preco}</Text>
+                    </View>
+                </View>
             )}
           />
-        </View>
       );
     }
 
@@ -64,4 +68,14 @@ export default function Bebidas (){
           color: '#007AFF',
           fontWeight: '600',
         },
+        image:{
+            width: 70,
+            height: 70,
+            marginRight: 10
+        },
+        card:{
+            flexDirection: 'row',
+            alignItems: 'center',
+            margin: 10
+        }
       });
