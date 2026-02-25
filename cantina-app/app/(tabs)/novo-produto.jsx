@@ -14,7 +14,7 @@ export default function NovoProduto() {
       return;
     }
 
-    // Aqui você implementaria a lógica para salvar o produto (ex: API ou Contexto)
+    // aqui tem que implementar a lógica para salvar no banco de dados ou api, por enquato só mostra um alert
     console.log('Novo Produto:', { nome, preco, categoria });
     
     Alert.alert('Sucesso', 'Produto cadastrado com sucesso!', [
@@ -121,21 +121,21 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#007AFF',
+    borderColor: '#ffa600',
     alignItems: 'center',
   },
   categoriaAtiva: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#ffa600',
   },
   categoriaTexto: {
-    color: '#007AFF',
+    color: '#000000',
     fontWeight: 'bold',
   },
   categoriaTextoAtivo: {
     color: '#fff',
   },
   botaoSalvar: {
-    backgroundColor: '#2ecc71',
+    backgroundColor: '#ffc400',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
