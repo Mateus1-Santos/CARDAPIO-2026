@@ -59,7 +59,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                       <Text style={styles.qtyButtonText}>+</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => removeFromCart(item.id)} style={styles.removeButton}>
-                      <IconSymbol name="trash" size={20} color="#ff4444" />
+                      <IconSymbol name="trash" size={20} color="#db1515" />
                     </TouchableOpacity>
                   </View>
                 </View>
