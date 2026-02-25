@@ -17,13 +17,15 @@ export const unstable_settings = {
 function HeaderCartButton({ onOpen }) {
   const { cartCount } = useCart();
   return (
-    <TouchableOpacity onPress={onOpen} style={styles.cartButton}>
-      <IconSymbol name="cart" size={24} color="#007AFF" />
-      {cartCount > 0 && (
-        <View style={styles.badge}>
-          <Text style={styles.badgeText}>{cartCount}</Text>
-        </View>
-      )}
+    <TouchableOpacity onPress={onOpen} style={styles.cartButtonContainer} activeOpacity={0.7}>
+      <View style={styles.iconWrapper}>
+        <IconSymbol name="cart.fill" size={26} color="#007AFF" />
+        {cartCount > 0 && (
+          <View style={styles.badge}>
+            <Text style={styles.badgeText}>{cartCount > 99 ? '99+' : cartCount}</Text>
+          </View>
+        )}
+      </View>
     </TouchableOpacity>
   );
 }
@@ -40,7 +42,13 @@ function RootLayoutContent() {
           options={{ 
             headerShown: true, 
             title: 'Cantina 2026',
-            headerRight: () => <HeaderCartButton onOpen={() => setIsCartOpen(true)} />
+            headerRight: () => <HeaderCartButton onOpen={() => setIsCartOpen(true)} />,
+            headerStyle: {
+              backgroundColor: colorScheme === 'dark' ? '#121212' : '#fff',
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            }
           }} 
         />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
@@ -60,25 +68,42 @@ export default function RootLayout() {
 }
 
 const styles = StyleSheet.create({
-  cartButton: {
-    marginRight: 15,
-    padding: 5,
-    position: 'relative',
-  },
-  badge: {
-    position: 'absolute',
-    right: -5,
-    top: -5,
-    backgroundColor: '#ff4444',
-    borderRadius: 10,
-    width: 20,
-    height: 20,
+  cartButtonContainer: {
+    marginRight: 20,
+    padding: 8,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  iconWrapper: {
+    position: 'relative',
+    width: 32,
+    height: 32,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  badge: {
+    position: 'absolute',
+    right: -8,
+    top: -6,
+    backgroundColor: '#FF3B30', // Vermelho iOS padrão
+    borderRadius: 10,
+    minWidth: 20,
+    height: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#fff',
+    paddingHorizontal: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 3,
+  },
   badgeText: {
     color: '#fff',
-    fontSize: 12,
-    fontWeight: 'bold',
+    fontSize: 10,
+    fontWeight: '800',
+    textAlign: 'center',
   },
 });
