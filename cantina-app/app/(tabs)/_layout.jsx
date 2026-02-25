@@ -9,21 +9,21 @@ export default function TabLayout() {
         name='index' 
         options={{
           title: "Início",
-          tabBarIcon: ({ color }) => <IconSymbol name="house" size={24} color={color} />
+          tabBarIcon: ({ color }) => <IconSymbol name="house" size={24} color="#ffa600" />
         }} 
       />
       <Tabs.Screen 
         name='Bebidas' 
         options={{
           title: "Bebidas",
-          tabBarIcon: ({ color }) => <IconSymbol name="cup.and.saucer" size={24} color={color} />
+          tabBarIcon: ({ color }) => <IconSymbol name="cup.and.saucer" size={24} color="#ffa600" />
         }} 
       />
       <Tabs.Screen 
         name='Salgados' 
         options={{
           title: "Salgados",
-          tabBarIcon: ({ color }) => <IconSymbol name="takeoutbag.and.cup.and.straw" size={24} color={color} />
+          tabBarIcon: ({ color }) => <IconSymbol name="takeoutbag.and.cup.and.straw" size={24} color="#ffa600" />
         }} 
       />
       {/* Escondendo as telas de login e cadastro da barra de abas */}

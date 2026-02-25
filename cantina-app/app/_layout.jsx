@@ -19,7 +19,7 @@ function HeaderCartButton({ onOpen }) {
   return (
     <TouchableOpacity onPress={onOpen} style={styles.cartButtonContainer} activeOpacity={0.7}>
       <View style={styles.iconWrapper}>
-        <IconSymbol name="cart.fill" size={26} color="#007AFF" />
+        <IconSymbol name="cart.fill" size={26} color="#ffa600" />
         {cartCount > 0 && (
           <View style={styles.badge}>
             <Text style={styles.badgeText}>{cartCount > 99 ? '99+' : cartCount}</Text>
@@ -41,7 +41,7 @@ function RootLayoutContent() {
           name="(tabs)" 
           options={{ 
             headerShown: true, 
-            title: 'Cantina 2026',
+            title: 'ZeraFila',
             headerRight: () => <HeaderCartButton onOpen={() => setIsCartOpen(true)} />,
             headerStyle: {
               backgroundColor: colorScheme === 'dark' ? '#121212' : '#fff',
