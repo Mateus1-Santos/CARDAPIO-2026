@@ -1,21 +1,16 @@
 import {View, Text, FlatList, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {useState} from 'react'
-
+import React from 'react';
+import { useCart } from '../../context/CartContext';
 
 export default function Salgados() {
+    const { addToCart } = useCart();
 
     const salgados = [
-        {id: '1', nome: 'Coxinha', preco: '5.00',image: require ('../../assets/images/coxinha.png')},
-        {id: '2', nome: 'Salsicha', preco: '5.00', image: require('../../assets/images/salsicha (1).png')},
-        {id: '4', nome: 'Calzone', preco: '7.00', image: require('../../assets/images/calzone.png')},
-        {id: '5', nome: 'Patel', preco: '8.00', image: require('../../assets/images/pastel (1).png')}
+        {id: 's1', nome: 'Coxinha', preco: '5.00', image: require ('../../assets/images/coxinha.png')},
+        {id: 's2', nome: 'Salsicha', preco: '5.00', image: require('../../assets/images/salsicha (1).png')},
+        {id: 's4', nome: 'Calzone', preco: '7.00', image: require('../../assets/images/calzone.png')},
+        {id: 's5', nome: 'Pastel', preco: '8.00', image: require('../../assets/images/pastel (1).png')}
     ]
-
-    const [carrinho, setCarrinho] = useState([]);
-    const adicionarAoCarrinho = (item) => {
-      setCarrinho([...carrinho, item]);
-    };
-
 
     return (
           <FlatList
@@ -36,12 +31,10 @@ export default function Salgados() {
 
                 <TouchableOpacity
                     style={styles.botao}
-                    onPress={() => adicionarAoCarrinho(item)}
+                    onPress={() => addToCart(item)}
                   >
                     <Text style={styles.botaoTexto}>Adicionar</Text>
                 </TouchableOpacity>
-
-
             </View>
             )}
           />
@@ -49,28 +42,15 @@ export default function Salgados() {
     }
 
     const styles = StyleSheet.create({
-        container: {
-          flex: 1,
-          backgroundColor: '#ffff',
-          paddingTop: 60,
-          paddingHorizontal: 25,
-        },
-        titulo: {
-          fontSize: 28,
-          fontWeight: '700',
-          color: '#1a1a1a',
-          marginBottom: 30,
-        },
         lista: {
+          padding: 20,
           paddingBottom: 40,
         },
         item: {
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          paddingVertical: 18,
-          borderBottomWidth: 1,
-          borderBottomColor: '#f0f0f0',
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          paddingHorizontal: 10,
         },
         nome: {
           fontSize: 17,
@@ -78,29 +58,34 @@ export default function Salgados() {
           fontWeight: '500',
         },
         preco: {
-          fontSize: 17,
+          fontSize: 15,
           color: '#007AFF',
           fontWeight: '600',
+          marginTop: 4,
         },
         image:{
           width: 70,
           height: 70,
-          marginRight: 10
       },
       card:{
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 10,
-        marginBottom: 10,
-        backgroundColor: '#eee',
-        borderRadius: 8
+        padding: 15,
+        marginBottom: 12,
+        backgroundColor: '#fff',
+        borderRadius: 12,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
     },
     botao: {
       backgroundColor: '#2ecc71',
-      padding: 8,
-      borderRadius: 5,
-      marginLeft: 40,
+      paddingVertical: 10,
+      paddingHorizontal: 15,
+      borderRadius: 8,
     },
     botaoTexto: {
       color: '#fff',

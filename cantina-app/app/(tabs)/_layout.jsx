@@ -1,18 +1,31 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import HapticTab from '../../components/haptic-tab';
 import { IconSymbol } from '../../components/ui/icon-symbol';
-import { Colors } from '../../constants/theme';
-import { useColorScheme } from '../../hooks/use-color-scheme';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs>
-      <Tabs.Screen name='bebidas' options={{title: "Bebidas"}} />
-      <Tabs.Screen name='lanches' options={{title: "Lanches"}}/>
-      <Tabs.Screen name='salgados' options={{title: "Salgados"}}/>
+    <Tabs screenOptions={{ headerShown: false }}>
+      <Tabs.Screen 
+        name='index' 
+        options={{
+          title: "Início",
+          tabBarIcon: ({ color }) => <IconSymbol name="house" size={24} color={color} />
+        }} 
+      />
+      <Tabs.Screen 
+        name='Bebidas' 
+        options={{
+          title: "Bebidas",
+          tabBarIcon: ({ color }) => <IconSymbol name="cup.and.saucer" size={24} color={color} />
+        }} 
+      />
+      <Tabs.Screen 
+        name='Salgados' 
+        options={{
+          title: "Salgados",
+          tabBarIcon: ({ color }) => <IconSymbol name="takeoutbag.and.cup.and.straw" size={24} color={color} />
+        }} 
+      />
     </Tabs>
   );
 }
