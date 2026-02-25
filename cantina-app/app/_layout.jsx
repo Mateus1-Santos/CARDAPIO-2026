@@ -67,14 +67,16 @@ const styles = StyleSheet.create({
   },
   badge: {
     position: 'absolute',
-    right: -5,
-    top: -5,
+    right: -6,
+    top: -2, // Ajustado de -5 para -2 para descer um pouco
     backgroundColor: '#ff4444',
     borderRadius: 10,
-    width: 20,
-    height: 20,
+    width: 18, // Reduzido levemente para ficar mais harmônico
+    height: 18,
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 1.5,
+    borderColor: '#fff', // Adicionado uma borda branca para destacar do fundo
   },
   badgeText: {
     color: '#fff',
