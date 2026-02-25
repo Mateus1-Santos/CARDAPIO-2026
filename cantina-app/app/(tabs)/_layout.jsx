@@ -26,6 +26,13 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol name="takeoutbag.and.cup.and.straw" size={24} color="#ffa600" />
         }} 
       />
+      <Tabs.Screen 
+        name='novo-produto' 
+        options={{
+          title: "Novo",
+          tabBarIcon: ({ color }) => <IconSymbol name="plus.circle.fill" size={24} color={color} />
+        }} 
+      />
       {/* Escondendo as telas de login e cadastro da barra de abas */}
       <Tabs.Screen 
         name='login' 

@@ -22,6 +22,7 @@ const MAPPING = {
   'cup.and.saucer': 'local-cafe',
   'takeoutbag.and.cup.and.straw': 'fastfood',
   'cart.fill': 'shopping-cart',
+  'plus.circle.fill': 'add-circle',
 } as IconMapping;
 
 /**
