@@ -30,13 +30,13 @@ export default function TabLayout() {
       <Tabs.Screen 
         name='login' 
         options={{
-          href: null, // Isso remove o botão da barra de abas
+          href: null, // aqui remove a opção da tela de login da barra de abas do aplicativo 
         }} 
       />
       <Tabs.Screen 
         name='cadastro' 
         options={{
-          href: null, // Isso remove o botão da barra de abas
+          href: null, // aqui remove a opção da tela de cadastro da barra de abas do aplicativo 
         }} 
       />
     </Tabs>

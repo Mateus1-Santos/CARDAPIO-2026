@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: -8,
     top: -6,
-    backgroundColor: '#FF3B30', // Vermelho iOS padrão
+    backgroundColor: '#FF3B30', 
     borderRadius: 10,
     minWidth: 20,
     height: 20,
