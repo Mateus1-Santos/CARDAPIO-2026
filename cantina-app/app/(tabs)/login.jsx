@@ -10,6 +10,7 @@ function HomeScreen() {
 }
 
 export default function Login() {
+
   const [form, setForm] = useState({ email: '', senha: '' });
 
   const handleInput = (name, value) => {
@@ -19,14 +20,37 @@ export default function Login() {
     });
   };
 
-  const realizarLogin = () => {
-    if (form.email === '' || form.senha === '') {
-      Alert.alert("Erro", "Por favor, preencha todos os campos!");
-      return;
+const realizarLogin = async () => {
+  if (form.email === '' || form.senha === '') {
+    Alert.alert("Erro", "Por favor, preencha todos os campos!");
+    return;
+  }
+
+  try {
+    const response = await fetch('http://192.168.0.180:3000/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: form.email,
+        senha: form.senha
+      })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      Alert.alert("Sucesso", data.message);
+    } else {
+      Alert.alert("Erro", data.message);
     }
-    console.log("Dados enviados:", form);
-    Alert.alert("Sucesso", `Logado com: ${form.email}`);
-  };
+
+  } catch (error) {
+    Alert.alert("Erro", "Não foi possível conectar ao servidor");
+    console.log(error);
+  }
+};
 
   return (
     <SafeAreaView style={styles.background}>

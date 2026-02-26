@@ -6,15 +6,48 @@ export default function Cadastro() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  function handleCadastro() {
-    if (!nome || !email || !senha) {
-      Alert.alert('Erro', 'Preencha todos os campos!');
-      return;
-    }
 
-    console.log({ nome, email, senha });
-    Alert.alert('Sucesso', 'Cadastro realizado!');
+      const realizarCadastro = async () => {
+      if (!nome === '' || !email === '' || !senha === '') {
+        Alert.alert("Erro", "Por favor, preencha todos os campos!");
+        return;
+      }
+    
+      try {
+        const response = await fetch('http://192.168.0.180:3000/cadastro', {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            nome,
+            email,
+            senha
+          })
+        });
+    
+        const data = await response.json();
+    
+        if (response.ok) {
+          Alert.alert("Sucesso", data.message);
+        } else {
+          Alert.alert("Erro", data.message);
+        }
+    
+      } catch (error) {
+        Alert.alert("Erro", "Não foi possível conectar ao servidor");
+        console.log(error);
+      }
+    };
   }
+
+
+
+
+
+  function handleCadastro() {
+
+
 
   return (
 
@@ -48,7 +81,7 @@ export default function Cadastro() {
         secureTextEntry
       />
 
-      <TouchableOpacity style={styles.botao} onPress={handleCadastro}>
+      <TouchableOpacity style={styles.botao} onPress={realizarCadastro}>
         <Text style={styles.textoBotao}>Cadastrar</Text>
       </TouchableOpacity>
     </View>
