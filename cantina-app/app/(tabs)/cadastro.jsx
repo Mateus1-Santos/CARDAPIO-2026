@@ -1,16 +1,53 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Text, View, StyleSheet, TextInput, SafeAreaView, TouchableOpacity, Alert, ScrollView } from 'react-native';
+import {useRouter} from 'expo-router'
 
 export default function CadastroScreen() {
   const router = useRouter();
+  
+  // Estados para os campos do formulário
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleCadastrar = () => {
-    alert('Cadastro realizado para: ' + nome);
-    router.back();
+  // Função para realizar o cadastro com os requisitos
+  const realizarCadastro = async () => {
+    if (nome === '' || email === '' || senha === '') {
+      Alert.alert("Erro", "Por favor, preencha todos os campos obrigatórios!");
+      return;
+    }
+
+    if (senha.length < 6) {
+      Alert.alert("Erro", "A senha deve ter pelo menos 6 caracteres!");
+      return;
+    }
+
+    try {
+      const response = await fetch('http://192.168.0.180:3000/cadastro', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          nome: nome,
+          email: email,
+          senha: senha
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        Alert.alert("Sucesso", "Cadastro realizado com sucesso!");
+        router.back();
+      } else {
+        Alert.alert("Erro", data.message || "Erro ao realizar cadastro");
+      }
+
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Aviso", "Servidor offline, mas os dados foram validados localmente!");
+    }
   };
 
   return (
@@ -21,21 +58,20 @@ export default function CadastroScreen() {
         <Text style={styles.label}>Nome Completo</Text>
         <TextInput
           style={styles.input}
-          placeholder="Ex: Mateus Santos"
+          placeholder="Digite seu nome"
           value={nome}
           onChangeText={setNome}
-          placeholderTextColor="#999"
+
         />
 
         <Text style={styles.label}>E-mail</Text>
         <TextInput
           style={styles.input}
-          placeholder="Ex: mateus@email.com"
+          placeholder="Digite seu e-mail"
           keyboardType="email-address"
           autoCapitalize="none"
           value={email}
           onChangeText={setEmail}
-          placeholderTextColor="#999"
         />
 
         <Text style={styles.label}>Senha</Text>
@@ -45,18 +81,16 @@ export default function CadastroScreen() {
           secureTextEntry
           value={senha}
           onChangeText={setSenha}
-          placeholderTextColor="#999"
         />
 
-        <TouchableOpacity style={styles.botaoSalvar} onPress={handleCadastrar}>
+        <TouchableOpacity style={styles.botaoSalvar} onPress={realizarCadastro}>
           <Text style={styles.botaoTexto}>Cadastrar</Text>
         </TouchableOpacity>
-
       </View>
     </ScrollView>
   );
 }
-
+//estilização quase pronta!
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
@@ -90,11 +124,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
     borderWidth: 1,
-    borderColor: '#FFD93D', // Amarelo na borda
+    borderColor: '#d58516',
     marginBottom: 20,
   },
   botaoSalvar: {
-    backgroundColor: '#FF8400', // Laranja vibrante
+    backgroundColor: '#FF8400',
     height: 55,
     borderRadius: 12,
     justifyContent: 'center',
