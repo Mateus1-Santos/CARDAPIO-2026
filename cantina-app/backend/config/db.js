@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'cantina_user',
-    password: '123456',
+    password: '1903',
     database: 'cantina_app'
 });
 
