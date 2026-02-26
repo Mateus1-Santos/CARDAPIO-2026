@@ -39,54 +39,55 @@ export default function Cadastro() {
         console.log(error);
       }
     };
+
+    return (
+
+      <View style={styles.container}>
+  
+        <Text style={styles.titulo}>Criar Conta</Text>
+  
+        <TextInput
+          style={styles.input}
+          placeholder="Nome"
+          placeholderTextColor="#000"
+          value={nome}
+          onChangeText={setNome}
+        />
+  
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          placeholderTextColor="#000"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+        />
+  
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+          placeholderTextColor="#000"
+          value={senha}
+          onChangeText={setSenha}
+          secureTextEntry
+        />
+  
+        <TouchableOpacity style={styles.botao} onPress={realizarCadastro}>
+          <Text style={styles.textoBotao}>Cadastrar</Text>
+        </TouchableOpacity>
+      </View>
+    );
+
+
+
+
   }
 
 
 
 
 
-  function handleCadastro() {
 
-
-
-  return (
-
-    <View style={styles.container}>
-
-      <Text style={styles.titulo}>Criar Conta</Text>
-
-      <TextInput
-        style={styles.input}
-        placeholder="Nome"
-        placeholderTextColor="#000"
-        value={nome}
-        onChangeText={setNome}
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        placeholderTextColor="#000"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="Senha"
-        placeholderTextColor="#000"
-        value={senha}
-        onChangeText={setSenha}
-        secureTextEntry
-      />
-
-      <TouchableOpacity style={styles.botao} onPress={realizarCadastro}>
-        <Text style={styles.textoBotao}>Cadastrar</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
