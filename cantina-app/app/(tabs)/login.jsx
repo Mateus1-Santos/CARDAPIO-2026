@@ -108,10 +108,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#ddd'
+    borderColor: '#FF8400'
   },
   botao: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#FF8400',
     height: 50,
     borderRadius: 8,
     justifyContent: 'center',

@@ -90,7 +90,6 @@ export default function CadastroScreen() {
     </ScrollView>
   );
 }
-//estilização quase pronta!
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
