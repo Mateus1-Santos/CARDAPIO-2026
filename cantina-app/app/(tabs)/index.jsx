@@ -11,10 +11,13 @@ export default function HomeScreen() {
       style={styles.background}
       resizeMode="cover"
     >
+      {/* Overlay escuro */}
+      <View style={styles.overlay} />
+
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <Text style={styles.titulo}>
-            Bem-vindo ao zerafila,por favor escolha uma das opçoes a baixo para prosseguir
+            Bem-vindo ao zerafila, por favor escolha uma das opções abaixo para prosseguir
           </Text>
         </View>
 
@@ -38,10 +41,14 @@ export default function HomeScreen() {
   );
 }
 
-
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+  },
+
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
 
   container: {
@@ -61,9 +68,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     color: '#fff',
-    textShadowColor: 'black',
-    textShadowOffset: {width: 2, height: 2},
-    textShadowRadius: 1,
   },
 
   botao: {
