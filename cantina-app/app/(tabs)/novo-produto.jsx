@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     padding: 20,
     backgroundColor: '#f8f9fa',
+    borderColor: "#FF8400"
   },
   titulo: {
     fontSize: 24,
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: '#FF8400',
     borderRadius: 8,
     padding: 12,
     fontSize: 16,
