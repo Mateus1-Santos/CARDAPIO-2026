@@ -48,6 +48,7 @@ export default function Bebidas (){
         lista: {
           padding: 20,
           paddingBottom: 40,
+          borderColor: '#FF8400'
         },
         item: {
           flex: 1,

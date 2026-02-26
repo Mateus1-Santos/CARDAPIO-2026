@@ -45,6 +45,7 @@ export default function Salgados() {
         lista: {
           padding: 20,
           paddingBottom: 40,
+          borderColor: '#FF8400'
         },
         item: {
           flex: 1,
