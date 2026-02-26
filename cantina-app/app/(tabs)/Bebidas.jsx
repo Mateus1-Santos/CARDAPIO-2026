@@ -57,12 +57,12 @@ export default function Bebidas (){
         },
         nome: {
           fontSize: 17,
-          color: '#333',
+          color: '#000',
           fontWeight: '500',
         },
         preco: {
           fontSize: 15,
-          color: '#007AFF',
+          color: '#ffa600',
           fontWeight: '600',
           marginTop: 4,
         },
@@ -85,7 +85,7 @@ export default function Bebidas (){
             elevation: 3,
         },
         botao: {
-            backgroundColor: '#2ecc71',
+            backgroundColor: '#df9223',
             paddingVertical: 10,
             paddingHorizontal: 15,
             borderRadius: 8,

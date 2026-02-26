@@ -1,125 +1,114 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { useRouter } from 'expo-router';
 
-export default function Cadastro() {
+export default function CadastroScreen() {
+  const router = useRouter();
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
+  const handleCadastrar = () => {
+    alert('Cadastro realizado para: ' + nome);
+    router.back();
+  };
 
-      const realizarCadastro = async () => {
-      if (!nome === '' || !email === '' || !senha === '') {
-        Alert.alert("Erro", "Por favor, preencha todos os campos!");
-        return;
-      }
-    
-      try {
-        const response = await fetch('http://192.168.0.180:3000/cadastro', {
-          method: 'POST',
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            nome,
-            email,
-            senha
-          })
-        });
-    
-        const data = await response.json();
-    
-        if (response.ok) {
-          Alert.alert("Sucesso", data.message);
-        } else {
-          Alert.alert("Erro", data.message);
-        }
-    
-      } catch (error) {
-        Alert.alert("Erro", "Não foi possível conectar ao servidor");
-        console.log(error);
-      }
-    };
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.titulo}>Criar Nova Conta</Text>
 
-    return (
-
-      <View style={styles.container}>
-  
-        <Text style={styles.titulo}>Criar Conta</Text>
-  
+      <View style={styles.form}>
+        <Text style={styles.label}>Nome Completo</Text>
         <TextInput
           style={styles.input}
-          placeholder="Nome"
-          placeholderTextColor="#000"
+          placeholder="Ex: Mateus Santos"
           value={nome}
           onChangeText={setNome}
+          placeholderTextColor="#999"
         />
-  
+
+        <Text style={styles.label}>E-mail</Text>
         <TextInput
           style={styles.input}
-          placeholder="Email"
-          placeholderTextColor="#000"
+          placeholder="Ex: mateus@email.com"
+          keyboardType="email-address"
+          autoCapitalize="none"
           value={email}
           onChangeText={setEmail}
-          keyboardType="email-address"
+          placeholderTextColor="#999"
         />
-  
+
+        <Text style={styles.label}>Senha</Text>
         <TextInput
           style={styles.input}
-          placeholder="Senha"
-          placeholderTextColor="#000"
+          placeholder="Mínimo 6 caracteres"
+          secureTextEntry
           value={senha}
           onChangeText={setSenha}
-          secureTextEntry
+          placeholderTextColor="#999"
         />
-  
-        <TouchableOpacity style={styles.botao} onPress={realizarCadastro}>
-          <Text style={styles.textoBotao}>Cadastrar</Text>
+
+        <TouchableOpacity style={styles.botaoSalvar} onPress={handleCadastrar}>
+          <Text style={styles.botaoTexto}>Cadastrar</Text>
         </TouchableOpacity>
+
       </View>
-    );
-
-
-
-
-  }
-
-
-
-
-
-
+    </ScrollView>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#9e5312',
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
+    flexGrow: 1,
+    backgroundColor: '#fff',
+    paddingHorizontal: 25,
+    paddingTop: 60,
+    paddingBottom: 40,
   },
   titulo: {
-    color: '#f8a835',
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign: 'center'
+    color: '#333',
+    marginBottom: 30,
+    textAlign: 'center',
+  },
+  form: {
+    width: '100%',
+  },
+  label: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#555',
+    marginBottom: 8,
+    marginLeft: 4,
   },
   input: {
-    color: '#d31206',
+    height: 50,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 10,
+    paddingHorizontal: 15,
+    fontSize: 16,
+    color: '#333',
     borderWidth: 1,
-    borderColor: '#f8a835',
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 12,
+    borderColor: '#FFD93D', // Amarelo na borda
+    marginBottom: 20,
   },
-  botao: {
-    backgroundColor: '#d31206',
-    color: 'white',
-    padding: 15,
-    borderRadius: 8,
+  botaoSalvar: {
+    backgroundColor: '#FF8400', // Laranja vibrante
+    height: 55,
+    borderRadius: 12,
+    justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 10,
+    shadowColor: '#FF8400',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 3,
   },
-  textoBotao: {
-    color: '#000',
+  botaoTexto: {
+    color: '#fff',
+    fontSize: 18,
     fontWeight: 'bold',
   },
 });

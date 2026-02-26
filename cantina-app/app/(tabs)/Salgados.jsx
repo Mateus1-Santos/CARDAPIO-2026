@@ -59,7 +59,7 @@ export default function Salgados() {
         },
         preco: {
           fontSize: 15,
-          color: '#007AFF',
+          color: '#ffa600',
           fontWeight: '600',
           marginTop: 4,
         },
@@ -82,7 +82,7 @@ export default function Salgados() {
         elevation: 3,
     },
     botao: {
-      backgroundColor: '#2ecc71',
+      backgroundColor: '#df9223',
       paddingVertical: 10,
       paddingHorizontal: 15,
       borderRadius: 8,
