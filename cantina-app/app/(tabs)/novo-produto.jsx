@@ -8,19 +8,38 @@ export default function NovoProduto() {
   const [categoria, setCategoria] = useState('Salgados');
   const router = useRouter();
 
-  const handleSalvar = () => {
-    if (!nome || !preco) {
-      Alert.alert('Erro', 'Por favor, preencha todos os campos.');
-      return;
-    }
 
-    // aqui tem que implementar a lógica para salvar no banco de dados ou api, por enquato só mostra um alert
-    console.log('Novo Produto:', { nome, preco, categoria });
-    
-    Alert.alert('Sucesso', 'Produto cadastrado com sucesso!', [
-      { text: 'OK', onPress: () => router.back() }
-    ]);
-  };
+
+    // integração do backend para cadastrar novos produtos  
+    const realizarCadastro = async () => {
+      if (nome === '' || preco === ''){
+        Alert.alert('Preencha todos os campos!');
+        return;
+      }
+
+      try{
+        const response = await fetch ('http://192.168.0.180:3000/produtos', {
+          method: 'POST',
+          headers:{
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            nome: nome,
+            preco: parseFloat(preco),
+            categoria: categoria.toLowerCase()
+          })
+        })
+        if (response.ok) {
+          Alert.alert('Sucesso', 'Produto cadastrado com sucesso!', [
+            { text: 'OK', onPress: () => router.back() }
+          ]);
+        } else {
+          Alert.alert('Erro', 'Falha ao cadastrar produto.');
+        }
+      } catch (error) {
+        Alert.alert('Erro', 'Erro ao cadastrar produto.');
+      }
+    }
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -60,7 +79,7 @@ export default function NovoProduto() {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.botaoSalvar} onPress={handleSalvar}>
+        <TouchableOpacity style={styles.botaoSalvar} onPress={realizarCadastro}>
           <Text style={styles.botaoTexto}>Salvar Produto</Text>
         </TouchableOpacity>
 

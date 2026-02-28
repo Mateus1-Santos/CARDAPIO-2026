@@ -75,6 +75,35 @@ app.post("/login", (req, res) => {
   );
 });
 
+
+
+// rota para cadastrar novos produtos
+app.post("/produtos", (req, res) => {
+  const { nome, preco, categoria } = req.body;
+
+  connection.query(
+    "INSERT INTO produtos (nome, preco, categoria) VALUES (?, ?, ?)",
+    [nome, preco, categoria],
+    (err, results) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json(err);
+      }
+
+      res.status(201).json({
+        id: results.insertId,
+        nome,
+        preco,
+        categoria
+      });
+    }
+  );
+});
+
+
+
+
+
 //porta usada pelo servidor 
 app.listen(3000, ()=>{
     console.log("Servidor rodando com sucesso na porta 3000");
