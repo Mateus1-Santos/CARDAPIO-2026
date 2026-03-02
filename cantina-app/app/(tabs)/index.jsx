@@ -11,7 +11,6 @@ export default function HomeScreen() {
       style={styles.background}
       resizeMode="cover"
     >
-      {/* Overlay escuro */}
       <View style={styles.overlay} />
 
       <View style={styles.container}>
